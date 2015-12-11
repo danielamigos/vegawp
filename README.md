@@ -1,2 +1,3 @@
 # vegawp
-Created by: danielvalenzuela.com.mx
+Author: Daniel Valenzuela
+Author's website: http://danielvalenzuela.com.mx
