@@ -1,22 +1,18 @@
-			<!-- footer -->
-			<footer class="footer" role="contentinfo">
+			
+			<footer class="footer roundcorner-wrapper" role="contentinfo">
+				<div class="row ">
+					<div class="col-sm-2"><div class="footer-logo"><img src="<?php echo get_template_directory_uri(); ?>/img/footerlogo.png" alt="Footer logo"/></div></div>
+					<div class="col-sm-5"><p class="footer-call-for-estimate">Call for a free estimate 480-378-3436</p></div>
+					<div class="col-sm-3">Footer menu</div>
+					<div class="col-sm-2">Copyright 2016</div>
+				</div>
+			</footer><!-- /footer -->
 
-				<!-- copyright -->
-				<p class="copyright">
-					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'vegapoolpros'); ?>
-					<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//vegapoolpros.com" title="Vega Pool Pros">Vega Pool Pros</a>.
-				</p>
-				<!-- /copyright -->
-
-			</footer>
-			<!-- /footer -->
-
-		</div>
-		<!-- /wrapper -->
+		</div><!-- /container -->
 
 		<?php wp_footer(); ?>
 
-		<!-- analytics -->
+		<!-- analytics
 		<script>
 		(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
 		(f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),
@@ -24,7 +20,7 @@
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 		ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
 		ga('send', 'pageview');
-		</script>
+		</script> -->
 
 	</body>
 </html>

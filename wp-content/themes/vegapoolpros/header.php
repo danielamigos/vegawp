@@ -31,30 +31,47 @@
 		<meta name="description" content="<?php bloginfo('description'); ?>">
 
 		<?php wp_head(); ?>
-		<script>
-        // conditionizr.com
-        // configure environment tests
-        conditionizr.config({
-            assets: '<?php echo get_template_directory_uri(); ?>',
-            tests: {}
-        });
-        </script>
-
 	</head>
 	<body <?php body_class(); ?>>
 
 		<!-- wrapper -->
-		<div class="wrapper">
+		<div class="container">
 
 			<!-- header -->
 			<header class="header clear" role="banner">
-
+				<?PHP if(is_front_page()): ?>
+					<div class="row">
+						<div class="col-sm-4 roundcorner-wrapper"  >
+							<div class="frontpage-logo">
+							<?php if ( get_theme_mod( 'vega_logo' )): ?>
+								<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr(get_bloginfo( 'name','display')); ?>' rel='home'>
+									<img src='<?php echo esc_url( get_theme_mod( 'vega_logo' ) ); ?>' alt='<?php echo esc_attr(get_bloginfo('name','display')); ?>'>
+								</a>
+							<?php endif; ?>
+							</div>
+						</div>
+						<div class="col-sm-8 roundcorner-wrapper">
+							<div class="frontpage-heading">						
+								<?php $image = get_field('header_rollover_image'); if( !empty($image) ): ?>
+									<img src="<?PHP echo $image['url']; ?>" alt="Header Image"/>
+								<?PHP endif; ?>		
+								<h1><?PHP the_field('header_text'); ?></h1>
+							</div>
+						</div>
+					</div>
+				<?PHP else: ?>
 					<!-- logo -->
 					<div class="logo">
+						<?php if ( get_theme_mod( 'vega_logo' )): ?>
+							<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr(get_bloginfo( 'name','display')); ?>' rel='home'>
+								<img src='<?php echo esc_url( get_theme_mod( 'vega_logo' ) ); ?>' alt='<?php echo esc_attr(get_bloginfo('name','display')); ?>'>
+							</a>
+						<?php else: ?>
 						<a href="<?php echo home_url(); ?>">
 							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
 							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
-						</a>
+						</a>						
+						<?php endif; ?>
 					</div>
 					<!-- /logo -->
 
@@ -63,6 +80,6 @@
 						<?php vegapoolpros_nav(); ?>
 					</nav>
 					<!-- /nav -->
-
+				<?PHP endif; ?>
 			</header>
 			<!-- /header -->

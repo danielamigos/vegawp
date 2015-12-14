@@ -113,6 +113,10 @@ function vegapoolpros_conditional_scripts()
         wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), '1.0.0'); // Conditional script(s)
         wp_enqueue_script('scriptname'); // Enqueue it!
     }
+    if (is_front_page()) {
+        wp_register_script('frontpagescript', get_template_directory_uri() . '/js/frontpage.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_enqueue_script('frontpagescript'); // Enqueue it!
+    }
 }
 
 // Load Vega Pool Pros styles
@@ -355,7 +359,7 @@ add_action('wp_print_scripts', 'vegapoolpros_conditional_scripts'); // Add Condi
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'vegapoolpros_styles'); // Add Theme Stylesheet
 add_action('init', 'register_vega_menu'); // Add Vega Pool Pros Menu
-add_action('init', 'create_post_type_vega'); // Add our Vega Pool Pros Custom Post Type
+//add_action('init', 'create_post_type_vega'); // Add our Vega Pool Pros Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'vegawp_pagination'); // Add our Vega Pool Pros Pagination
 

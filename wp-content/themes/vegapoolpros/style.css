@@ -6,9 +6,6 @@
 	Author: Daniel Valenzuela
 	Author URI: http://danielvalenzuela.com.mx
 	Tags: HTML5, CSS3, Bootstrap 3
-
-	License: MIT
-	License URI: http://opensource.org/licenses/mit-license.php
 */
 
 /*------------------------------------*\
@@ -73,13 +70,6 @@ input:focus {
     STRUCTURE
 \*------------------------------------*/
 
-/* wrapper */
-.wrapper {
-	max-width:1280px;
-	width:95%;
-	margin:0 auto;
-	position:relative;
-}
 /* header */
 .header {
 
@@ -104,10 +94,132 @@ input:focus {
 
 }
 
+
+
+.roundcorner-wrapper .row {	
+	background-color: #939598;
+	border-radius: 10px;
+	height: 57px;
+}
+.footer-logo
+{
+	padding-top: 6px;
+}
+
+.footer-call-for-estimate{
+	font-family: 'GothamHTF-MediumCondensed';
+	font-size: 38px;
+	color: #D1D3D4;
+	text-transform: uppercase;
+}
+
 /*------------------------------------*\
     PAGES
 \*------------------------------------*/
 
+/*------------------------------------*\
+    FRONTPAGE
+\*------------------------------------*/
+.roundcorner-wrapper
+{
+	padding:5px;
+}
+.frontpage-logo
+{
+	background-color: #43BEAA;
+	border-radius: 10px;
+	/*padding:10px;*/
+}
+.frontpage-logo img
+{
+	border-radius: 10px;
+	/*padding:10px;*/
+}
+
+.frontpage-heading
+{
+	background-color: #939598;
+	border-radius: 10px;
+	/*padding:10px;*/
+}
+
+.frontpage-heading h1{   
+	display:inline-block; 
+	margin-top: 17px;
+    margin-left: 30px;
+	font-family: 'GothamHTF-Book';
+	font-size: 42px;
+	color: #ffffff;
+	text-transform: uppercase;
+}
+.frontpage-heading img
+{
+	border-radius: 10px;
+	display: none;
+	
+	/*padding:10px;*/
+}
+
+
+.frontpage-menu
+{
+	background-color: #939598;
+	border-radius: 10px;
+	/*padding:10px;*/
+}
+.frontpage-menu-wrapper{
+	position: relative;
+	overflow: hidden;
+}
+.frontpage-menu img
+{
+	border-radius: 10px;
+}
+.frontpage-menu-overlay{
+    /*background: #000;
+    filter: alpha(opacity=70);
+    -moz-opacity: 0.7;
+    -khtml-opacity: 0.7;
+    opacity: 0.7;*/
+	background-image: url('img/Opacity50.png');
+	bottom: 0;
+	position: absolute;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px; 
+	width:100%;
+	height:80px;
+	transition: all 0.5s ease 0s;
+}
+.frontpage-menu-overlay:hover {
+	height:285px;
+}
+.frontpage-menu-overlay h2{
+	color:#ffffff;
+	text-align: center;
+	text-transform: uppercase;	
+	font-family: 'GothamHTF-Book';
+	font-size: 50px;
+    margin-top: 15px;
+    margin-bottom: 9px;
+}
+
+.frontpage-menu-description{
+	color: #ffffff;
+	font-family: 'GothamHTF-Book';
+	font-size: 13px;
+	text-align: center;
+	padding-left: 20px;
+	padding-right: 20px;
+	height:115px;
+}
+.frontpage-menu-keywords{
+	color: #ffffff;	
+	font-family: 'GothamMedium-Regular';
+	font-size: 18px;
+	text-align: center;
+	padding-left: 20px;
+	padding-right: 20px;
+}
 
 
 /*------------------------------------*\
@@ -121,41 +233,157 @@ input:focus {
 \*------------------------------------*/
 
 @font-face {
-	font-family:'Font-Name';
-	src:url('fonts/font-name.eot');
-	src:url('fonts/font-name.eot?#iefix') format('embedded-opentype'),
-		url('fonts/font-name.woff') format('woff'),
-		url('fonts/font-name.ttf') format('truetype'),
-		url('fonts/font-name.svg#font-name') format('svg');
-    font-weight:normal;
-    font-style:normal;
+	font-family:'GothamHTF-Book';
+	src: url('fonts/GothamHTF-Book_gdi.eot');
+	src: url('fonts/GothamHTF-Book_gdi.eot?#iefix') format('embedded-opentype'),
+		url('fonts/GothamHTF-Book_gdi.woff') format('woff'),
+		url('fonts/GothamHTF-Book_gdi.ttf') format('truetype'),
+		url('fonts/GothamHTF-Book_gdi.otf') format('opentype'),
+		url('fonts/GothamHTF-Book_gdi.svg#GothamHTF-Book') format('svg');
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-2248;
+}
+@font-face {
+	font-family:'GothamMedium-Regular';
+	src: url('fonts/GothamMedium_gdi.eot');
+	src: url('fonts/GothamMedium_gdi.eot?#iefix') format('embedded-opentype'),
+		url('fonts/GothamMedium_gdi.woff') format('woff'),
+		url('fonts/GothamMedium_gdi.ttf') format('truetype'),
+		url('fonts/GothamMedium_gdi.otf') format('opentype'),
+		url('fonts/GothamMedium_gdi.svg#GothamMedium-Regular') format('svg');
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-2248;
+}
+@font-face {
+	font-family:'GothamHTF-Medium';
+	src: url('fonts/GothamHTF-Medium_gdi.eot');
+	src: url('fonts/GothamHTF-Medium_gdi.eot?#iefix') format('embedded-opentype'),
+		url('fonts/GothamHTF-Medium_gdi.woff') format('woff'),
+		url('fonts/GothamHTF-Medium_gdi.ttf') format('truetype'),
+		url('fonts/GothamHTF-Medium_gdi.otf') format('opentype'),
+		url('fonts/GothamHTF-Medium_gdi.svg#GothamHTF-Medium') format('svg');
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-2248;
+}
+@font-face {
+	font-family:'GothamHTF-MediumCondensed';
+	src: url('fonts/GothamHTF-MediumCondensed_gdi.eot');
+	src: url('fonts/GothamHTF-MediumCondensed_gdi.eot?#iefix') format('embedded-opentype'),
+		url('fonts/GothamHTF-MediumCondensed_gdi.woff') format('woff'),
+		url('fonts/GothamHTF-MediumCondensed_gdi.ttf') format('truetype'),
+		url('fonts/GothamHTF-MediumCondensed_gdi.otf') format('opentype'),
+		url('fonts/GothamHTF-MediumCondensed_gdi.svg#GothamHTF-MediumCondensed') format('svg');
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: condensed;
+	unicode-range: U+0020-2248;
 }
 
 /*------------------------------------*\
     RESPONSIVE
 \*------------------------------------*/
 
-@media only screen and (min-width:320px) {
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+		
+	.frontpage-heading h1
+	{
+		font-size: 38px;
+	}
+}
+
+@media only screen and (min-width : 445px) {
+
+	
+	.frontpage-heading h1
+	{
+		font-size: 50px;
+	}
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+
+	
+	.frontpage-heading h1
+	{
+		font-size: 62px;
+	}
+}
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 620px) {
+
+	
+	.frontpage-heading h1
+	{
+		font-size: 82px;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+	.frontpage-logo
+	{
+		height: 240px;
+	}
+	
+	.frontpage-menu,
+	.frontpage-heading
+	{
+		height: 240px;
+	}
+	
+	.frontpage-heading h1
+	{
+		font-size: 62px;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+	.frontpage-logo
+	{
+		height: 314px;
+	}	
+	.frontpage-menu,
+	.frontpage-heading
+	{
+		height: 314px;
+	}
+	
+	.frontpage-heading h1
+	{
+		font-size: 82px;
+	}
 
 }
-@media only screen and (min-width:480px) {
 
-}
-@media only screen and (min-width:768px) {
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
 
-}
-@media only screen and (min-width:1024px) {
-
-}
-@media only screen and (min-width:1140px) {
-
-}
-@media only screen and (min-width:1280px) {
-
-}
-@media only screen and (-webkit-min-device-pixel-ratio:1.5),
-	   only screen and (min-resolution:144dpi) {
-
+	.frontpage-logo
+	{
+		height: 380px;
+	}
+	.frontpage-menu,
+	.frontpage-heading
+	{
+		height: 380px;
+	}
+	
+	.frontpage-heading h1
+	{
+		font-size: 100px;
+	}
 }
 
 /*------------------------------------*\
