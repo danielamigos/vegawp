@@ -94,12 +94,9 @@ input:focus {
 
 }
 
-
-
 .roundcorner-wrapper .row {	
 	background-color: #939598;
 	border-radius: 10px;
-	height: 57px;
 }
 .footer-logo
 {
@@ -111,6 +108,12 @@ input:focus {
 	font-size: 38px;
 	color: #D1D3D4;
 	text-transform: uppercase;
+	margin-bottom: 0;
+}
+
+.roundcorner-wrapper
+{
+	padding:5px;
 }
 
 /*------------------------------------*\
@@ -120,14 +123,12 @@ input:focus {
 /*------------------------------------*\
     FRONTPAGE
 \*------------------------------------*/
-.roundcorner-wrapper
-{
-	padding:5px;
-}
+
 .frontpage-logo
 {
 	background-color: #43BEAA;
 	border-radius: 10px;
+	position: relative;
 	/*padding:10px;*/
 }
 .frontpage-logo img
@@ -136,15 +137,48 @@ input:focus {
 	/*padding:10px;*/
 }
 
+.logo-rollover{
+	position: absolute;
+	top: 0;
+	
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+	transition: all 0.5s ease 0s;
+}
+.logo-rollover-text
+{
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	font-family: 'GothamHTF-Book';
+	font-size: 60px;
+	width:100%;
+	color: #ffffff; 
+	text-transform: uppercase;
+	margin-bottom:75px;
+}
+.logo-rollover:hover{
+	position: absolute;
+	top: 0;
+    filter: alpha(opacity=1);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
+}
+
 .frontpage-heading
 {
+	position: relative;
 	background-color: #939598;
 	border-radius: 10px;
 	/*padding:10px;*/
 }
 
 .frontpage-heading h1{   
-	display:inline-block; 
+	position: absolute;
+	top:0; 
 	margin-top: 17px;
     margin-left: 30px;
 	font-family: 'GothamHTF-Book';
@@ -152,12 +186,24 @@ input:focus {
 	color: #ffffff;
 	text-transform: uppercase;
 }
-.frontpage-heading img
+.frontpage-heading-image
 {
 	border-radius: 10px;
-	display: none;
+	position: absolute;
+	top: 0;
 	
-	/*padding:10px;*/
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+	transition: all 0.5s ease 0s;
+}
+.frontpage-heading-image:hover
+{	
+    filter: alpha(opacity=1);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
 }
 
 
