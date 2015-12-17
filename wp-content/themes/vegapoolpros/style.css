@@ -71,8 +71,30 @@ input:focus {
 \*------------------------------------*/
 .main-menu .menu-item{
 	height: 100px;
-	background-color: #939598;
+	background-color: #A7A9AC;
 	border-radius: 10px;
+}
+.main-menu .menu-item:hover {
+	background-color: #4D4D4F;
+}
+.main-menu .menu-item.current-menu-item,
+.main-menu .menu-item.current-menu-item:hover {
+	background-color: #D1D3D4;
+}
+.main-menu .menu-item a{
+	display: block;
+	color: #D1D3D4;
+	font-size: 50px;
+	font-family: 'GothamHTF-Bold';
+	text-transform: uppercase;
+	text-align: center;
+	width: 100%;
+	text-decoration: none;
+	padding-top:12px;
+}
+
+.main-menu .menu-item.current-menu-item a{
+	color: #43BEAA;
 }
 
 /* header */
@@ -298,6 +320,39 @@ input:focus {
 	padding-right: 20px;
 }
 
+/*------------------------------------*\
+    PAGE
+\*------------------------------------*/
+.page-logo
+{
+	background-color: #43BEAA;
+	border-radius: 10px;
+	position: relative;
+	/*padding:10px;*/
+}
+.page-logo img
+{
+	border-radius: 10px;
+	/*padding:10px;*/
+}
+
+.page-main-slideshow
+{
+	position: relative;
+	background-color: #939598;
+	border-radius: 10px;
+	/*padding:10px;*/
+}
+
+.page-main-content
+{
+	position: relative;
+	background-color: #4D4D4F;
+	border-radius: 10px;
+	margin-top:10px;
+	color: #ffffff;
+	padding:10px;
+}
 
 /*------------------------------------*\
     IMAGES
@@ -361,6 +416,19 @@ input:focus {
 	font-stretch: condensed;
 	unicode-range: U+0020-2248;
 }
+@font-face {
+	font-family:'GothamHTF-Bold';
+	src: url('fonts/GothamHTF-Bold_gdi.eot');
+	src: url('fonts/GothamHTF-Bold_gdi.eot?#iefix') format('embedded-opentype'),
+		url('fonts/GothamHTF-Bold_gdi.woff') format('woff'),
+		url('fonts/GothamHTF-Bold_gdi.ttf') format('truetype'),
+		url('fonts/GothamHTF-Bold_gdi.otf') format('opentype'),
+		url('fonts/GothamHTF-Bold_gdi.svg#GothamHTF-Bold') format('svg');
+	font-weight: 700;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-2248;
+}
 
 /*------------------------------------*\
     RESPONSIVE
@@ -407,13 +475,15 @@ input:focus {
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
 
-	.frontpage-logo
+	.frontpage-logo,
+	.page-logo
 	{
 		height: 240px;
 	}
 	
 	.frontpage-menu,
-	.frontpage-heading
+	.frontpage-heading,
+	.page-main-slideshow
 	{
 		height: 240px;
 	}
@@ -427,12 +497,14 @@ input:focus {
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
 
-	.frontpage-logo
+	.frontpage-logo,
+	.page-logo
 	{
 		height: 314px;
 	}	
 	.frontpage-menu,
-	.frontpage-heading
+	.frontpage-heading,
+	.page-main-slideshow
 	{
 		height: 314px;
 	}
@@ -447,12 +519,14 @@ input:focus {
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
 
-	.frontpage-logo
+	.frontpage-logo,
+	.page-logo
 	{
 		height: 380px;
 	}
 	.frontpage-menu,
-	.frontpage-heading
+	.frontpage-heading,
+	.page-main-slideshow
 	{
 		height: 380px;
 	}
