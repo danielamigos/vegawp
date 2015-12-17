@@ -85,25 +85,9 @@
 							</div>
 						</div>
 					</div>
-				<?PHP else: ?>
-					<!-- logo -->
-					<div class="logo">
-						<?php if ( get_theme_mod( 'vega_logo' )): ?>
-							<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr(get_bloginfo( 'name','display')); ?>' rel='home'>
-								<img src='<?php echo esc_url( get_theme_mod( 'vega_logo' ) ); ?>' alt='<?php echo esc_attr(get_bloginfo('name','display')); ?>'>
-							</a>
-						<?php else: ?>
-						<a href="<?php echo home_url(); ?>">
-							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
-						</a>						
-						<?php endif; ?>
-					</div>
-					<!-- /logo -->
-
-					<!-- nav -->
+				<?PHP else: ?>					
 					<nav class="nav" role="navigation">
-						<?php vegapoolpros_nav(); ?>
+						<?php vegapoolpros_main(); ?>
 					</nav>
 					<!-- /nav -->
 				<?PHP endif; ?>

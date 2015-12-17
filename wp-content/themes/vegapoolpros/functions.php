@@ -63,11 +63,11 @@ if (function_exists('add_theme_support'))
 \*------------------------------------*/
 
 // Vega Pool Pros navigation
-function vegapoolpros_nav()
+function vegapoolpros_main()
 {
 	wp_nav_menu(
 	array(
-		'theme_location'  => 'header-menu',
+		'theme_location'  => 'main-menu',
 		'menu'            => '',
 		'container'       => 'div',
 		'container_class' => 'menu-{menu slug}-container',
@@ -80,7 +80,53 @@ function vegapoolpros_nav()
 		'after'           => '',
 		'link_before'     => '',
 		'link_after'      => '',
-		'items_wrap'      => '<ul>%3$s</ul>',
+		'items_wrap'      => '<div class="row main-menu">%3$s</div>',
+		'depth'           => 0,
+		'walker'          => new MainMenu_Walker
+		)
+	);
+}
+function vegapoolpros_secondary()
+{
+	wp_nav_menu(
+	array(
+		'theme_location'  => 'secondary-menu',
+		'menu'            => '',
+		'container'       => 'div',
+		'container_class' => 'menu-{menu slug}-container',
+		'container_id'    => '',
+		'menu_class'      => 'menu',
+		'menu_id'         => '',
+		'echo'            => true,
+		'fallback_cb'     => 'wp_page_menu',
+		'before'          => '',
+		'after'           => '',
+		'link_before'     => '',
+		'link_after'      => '',
+		'items_wrap'      => '<ul class="secondary-menu">%3$s</ul>',
+		'depth'           => 0,
+		'walker'          => ''
+		)
+	);
+}
+function vegapoolpros_footer()
+{
+	wp_nav_menu(
+	array(
+		'theme_location'  => 'footer-menu',
+		'menu'            => '',
+		'container'       => 'div',
+		//'container_class' => 'menu-{menu slug}-container',
+		'container_id'    => '',
+		'menu_class'      => 'menu',
+		'menu_id'         => '',
+		'echo'            => true,
+		'fallback_cb'     => 'wp_page_menu',
+		'before'          => '',
+		'after'           => '',
+		'link_before'     => '',
+		'link_after'      => '',
+		'items_wrap'      => '<ul class="footer-menu">%3$s</ul>',
 		'depth'           => 0,
 		'walker'          => ''
 		)
@@ -136,9 +182,9 @@ function vegapoolpros_styles()
 function register_vega_menu()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
-        'header-menu' => __('Header Menu', 'vegapoolpros'), // Main Navigation
-        'sidebar-menu' => __('Sidebar Menu', 'vegapoolpros'), // Sidebar Navigation
-        'extra-menu' => __('Extra Menu', 'vegapoolpros') // Extra Navigation if needed (duplicate as many as you need!)
+        'main-menu' => __('Main Menu', 'vegapoolpros'), // Main Navigation
+        'secondary-menu' => __('Secondary Menu', 'vegapoolpros'), // Sidebar Navigation
+        'footer-menu' => __('Footer Menu', 'vegapoolpros') // Extra Navigation if needed (duplicate as many as you need!)
     ));
 }
 
@@ -484,4 +530,23 @@ function vega_theme_customizer( $wp_customize ) {
 }
 add_action('customize_register', 'vega_theme_customizer');
 
+
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme General Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+	/*
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Front Page Slideshow',
+		'menu_title'	=> 'Front Page Slideshow',
+		'parent_slug'	=> 'theme-general-settings',
+	));	*/
+}
+
+require_once('main_menu_navwalker.php');
 ?>
