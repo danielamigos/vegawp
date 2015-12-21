@@ -96,6 +96,34 @@ input:focus {
 .main-menu .menu-item.current-menu-item a{
 	color: #43BEAA;
 }
+/*SECONDARY MENU*/
+.secondary-menu .menu-item{
+	height: 100px;
+	background-color: #A7A9AC;
+	border-radius: 10px;
+}
+.secondary-menu .menu-item:hover {
+	background-color: #4D4D4F;
+}
+.secondary-menu .menu-item.current-menu-item,
+.secondary-menu .menu-item.current-menu-item:hover {
+	background-color: #D1D3D4;
+}
+.secondary-menu .menu-item a{
+	display: block;
+	color: #D1D3D4;
+	font-size: 20px;
+	font-family: 'GothamHTF-Bold';
+	text-transform: uppercase;
+	text-align: center;
+	width: 100%;
+	text-decoration: none;
+	padding-top:35px;
+}
+
+.secondary-menu .menu-item.current-menu-item a{
+	color: #43BEAA;
+}
 
 /* header */
 .header {

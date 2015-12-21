@@ -14,19 +14,32 @@
 				<div class="page-main-slideshow" style="margin-top:10px;">
 					
 				</div>
-				<div class="main-menu">
-					<div class="col-sm-6 roundcorner-wrapper">
-						<div class="menu-item"><a href="#">Link1</a></div>
+				<div class="secondary-menu">
+					<div class="col-sm-6" style="padding: 10px 5px 0 5px">
+						<div class="menu-item"><a href="#">About Us</a></div>
 					</div>
-					<div class="col-sm-6 roundcorner-wrapper">
-						<div class="menu-item"><a href="#">Link2</a></div>
+					<div class="col-sm-6" style="padding: 10px 5px 0 5px">
+						<div class="menu-item"><a href="#">Locations</a></div>
+					</div>
+					<div class="col-sm-6" style="padding: 10px 5px 0 5px">
+						<div class="menu-item"><a href="#">Contact Us</a></div>
 					</div>
 				</div>
 				
 			</div>
 			<div class="col-sm-8 roundcorner-wrapper">
-				<div class="page-main-slideshow">								
-					
+				<div class="page-main-slideshow">
+                    <?php $images = get_field('main_slide_show_images'); if( $images ): ?>							
+                    <div class="danielvalenzuela-slideshow" id="product-slideshow" data-auto-play="false">
+                        <div class="danielvalenzuela-slideshow-wrapper" style="">
+                            <?php foreach( $images as $image ): ?> 
+                            <div class="danielvalenzuela-slide"  >
+                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
+                            </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                    <?php endif; ?>
 				</div>
 				
 				<div class="page-main-content">								
