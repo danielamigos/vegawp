@@ -97,6 +97,9 @@ input:focus {
 	color: #43BEAA;
 }
 /*SECONDARY MENU*/
+.secondary-menu{
+    margin-top:5px;
+}
 .secondary-menu .menu-item{
 	height: 100px;
 	background-color: #A7A9AC;
@@ -363,6 +366,33 @@ input:focus {
 	border-radius: 10px;
 	/*padding:10px;*/
 }
+.page-title{
+    position:absolute;
+    bottom:0;
+    border-radius:10px;
+	background-image: url('img/AquaOpacity50.png');
+    z-index: 1;
+    width: 100%;
+    height: 90px;	
+	text-transform: uppercase;
+    padding-left: 60px;
+    padding-top: 10px;    
+}
+.page-title h1{
+    color: #ffffff;
+	font-size: 50px;
+	font-family: 'GothamHTF-Bold';
+    margin: 0;
+    padding-top: 10px;    
+}
+.main-slide-controls
+{
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: 0;   
+    margin:10px;
+}
 
 .page-main-slideshow
 {
@@ -371,20 +401,63 @@ input:focus {
 	border-radius: 10px;
 	/*padding:10px;*/
 }
+.page-secondary-slideshow
+{
+	position: relative;
+	background-color: #939598;
+	border-radius: 10px;
+	margin-top:10px;
+}
 
-.page-main-content
+.secondary-slideshow-controls-wrapper{
+    position:absolute;
+    bottom:0;
+    z-index: 1;
+    width: 100%;
+    height: 90px;	  
+}
+.secondary-slideshow-controls
+{
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: 0;   
+    margin:10px;
+}
+
+.page-main-content 
 {
 	position: relative;
 	background-color: #4D4D4F;
 	border-radius: 10px;
 	margin-top:10px;
 	color: #ffffff;
-	padding:10px;
+	padding:20px;
+    font-size: 18px;
 }
 
 /*------------------------------------*\
     IMAGES
 \*------------------------------------*/
+
+.danielvalenzuela-slideshow{
+	position:relative;
+}
+.danielvalenzuela-slideshow-wrapper{
+	margin:0;
+	padding:0;
+	position:relative;
+	overflow:hidden;	
+}
+.danielvalenzuela-slide{
+	margin:0;
+	padding:0;
+	float:left;
+	position:relative;
+}
+.danielvalenzuela-slide > img{
+    border-radius:10px;
+}
 
 
 
@@ -511,6 +584,7 @@ input:focus {
 	
 	.frontpage-menu,
 	.frontpage-heading,
+	.page-secondary-slideshow,
 	.page-main-slideshow
 	{
 		height: 240px;
@@ -532,6 +606,7 @@ input:focus {
 	}	
 	.frontpage-menu,
 	.frontpage-heading,
+	.page-secondary-slideshow,
 	.page-main-slideshow
 	{
 		height: 314px;
@@ -554,6 +629,7 @@ input:focus {
 	}
 	.frontpage-menu,
 	.frontpage-heading,
+	.page-secondary-slideshow,
 	.page-main-slideshow
 	{
 		height: 380px;

@@ -94,6 +94,7 @@
 						currentPos = 0;
 					}				
 					$slideshow.attr('data-current-position',currentPos);
+                    $slideshow.attr('data-in-transition',false);
 				});
 			}
 		}
@@ -117,7 +118,8 @@
 				}
 				
 				$slideshow.find('.danielvalenzuela-slides-holder').animate({'marginLeft' : slideWidth*-(currentPos)},function(){
-					$slideshow.attr('data-current-position',currentPos);					
+					$slideshow.attr('data-current-position',currentPos);
+                    $slideshow.attr('data-in-transition',false);
 				});
 			}
 		}
@@ -198,7 +200,8 @@
 })(jQuery, this);
 
 
-function parseBool(string) {
-    var temp = string.toLowerCase();
+function parseBool(str) {
+    str = str.toString();
+    var temp = str.toLowerCase();
     return (temp == 'true');
 }

@@ -103,9 +103,9 @@ function vegapoolpros_secondary()
 		'after'           => '',
 		'link_before'     => '',
 		'link_after'      => '',
-		'items_wrap'      => '<ul class="secondary-menu">%3$s</ul>',
+		'items_wrap'      => '<div class="secondary-menu">%3$s</div>',
 		'depth'           => 0,
-		'walker'          => ''
+		'walker'          => new Secondary_Walker
 		)
 	);
 }
@@ -549,4 +549,5 @@ if( function_exists('acf_add_options_page') ) {
 }
 
 require_once('main_menu_navwalker.php');
+require_once('secondary_menu_navwalker.php');
 ?>

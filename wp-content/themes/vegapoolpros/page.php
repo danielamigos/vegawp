@@ -11,27 +11,41 @@
 					<?php endif; ?>				
 				</div>
 				
-				<div class="page-main-slideshow" style="margin-top:10px;">
-					
+				<div class="page-secondary-slideshow">
+					<?php if( have_rows('secondary_slide_show_images') ): ?> 
+                    <div class="danielvalenzuela-slideshow" id="secondary-slideshow" data-auto-play="true" data-speed="10000">
+                        <div class="danielvalenzuela-slideshow-wrapper">                            
+                            <div class="secondary-slideshow-controls-wrapper">
+                                <div class="secondary-slideshow-controls">
+                                    <a href="#" class="previous-slide"><img src="<?php echo get_template_directory_uri(); ?>/img/Previous.png" alt="Previous" /></a>
+                                    <a href="#" class="pause-slide"><img src="<?php echo get_template_directory_uri(); ?>/img/pause.png" alt="Pause" /></a>
+                                    <a href="#" class="next-slide"><img src="<?php echo get_template_directory_uri(); ?>/img/Next.png" alt="Next" /></a>
+                                </div>
+                            </div> 
+                            <?php while ( have_rows('secondary_slide_show_images') ) : the_row(); $image = get_sub_field('image'); ?>                            
+                                <div class="danielvalenzuela-slide"  >
+                                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
+                                </div>
+                            <?php endwhile; ?>
+                        </div>
+                    </div>
+                    <?php endif;?>
 				</div>
-				<div class="secondary-menu">
-					<div class="col-sm-6" style="padding: 10px 5px 0 5px">
-						<div class="menu-item"><a href="#">About Us</a></div>
-					</div>
-					<div class="col-sm-6" style="padding: 10px 5px 0 5px">
-						<div class="menu-item"><a href="#">Locations</a></div>
-					</div>
-					<div class="col-sm-6" style="padding: 10px 5px 0 5px">
-						<div class="menu-item"><a href="#">Contact Us</a></div>
-					</div>
-				</div>
-				
+                <?php vegapoolpros_secondary(); ?>				
 			</div>
 			<div class="col-sm-8 roundcorner-wrapper">
 				<div class="page-main-slideshow">
                     <?php $images = get_field('main_slide_show_images'); if( $images ): ?>							
-                    <div class="danielvalenzuela-slideshow" id="product-slideshow" data-auto-play="false">
-                        <div class="danielvalenzuela-slideshow-wrapper" style="">
+                    <div class="danielvalenzuela-slideshow" id="main-slideshow" data-auto-play="true">
+                        <div class="danielvalenzuela-slideshow-wrapper">                            
+                            <div class="page-title">
+                                <h1><?php the_title(); ?></h1>
+                                <div class="main-slide-controls">
+                                    <a href="#" class="previous-slide"><img src="<?php echo get_template_directory_uri(); ?>/img/Previous.png" alt="Previous" /></a>
+                                    <a href="#" class="pause-slide"><img src="<?php echo get_template_directory_uri(); ?>/img/pause.png" alt="Pause" /></a>
+                                    <a href="#" class="next-slide"><img src="<?php echo get_template_directory_uri(); ?>/img/Next.png" alt="Next" /></a>
+                                </div>
+                            </div> 
                             <?php foreach( $images as $image ): ?> 
                             <div class="danielvalenzuela-slide"  >
                                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
