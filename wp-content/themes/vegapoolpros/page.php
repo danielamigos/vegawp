@@ -16,10 +16,16 @@
                     <div class="danielvalenzuela-slideshow" id="secondary-slideshow" data-auto-play="true" data-speed="10000">
                         <div class="danielvalenzuela-slideshow-wrapper">                            
                             <div class="secondary-slideshow-controls-wrapper">
-                                <div class="secondary-slideshow-controls">
-                                    <a href="#" class="previous-slide"><img src="<?php echo get_template_directory_uri(); ?>/img/Previous.png" alt="Previous" /></a>
-                                    <a href="#" class="pause-slide"><img src="<?php echo get_template_directory_uri(); ?>/img/pause.png" alt="Pause" /></a>
-                                    <a href="#" class="next-slide"><img src="<?php echo get_template_directory_uri(); ?>/img/Next.png" alt="Next" /></a>
+                                <div class="secondary-slideshow-title-wrapper">
+                                    <p class="secondary-slideshow-title">Title</p>    
+                                </div>
+                                <div class="secondary-slideshow-description-wrapper">
+                                    <p>Description</p>
+                                    <div class="secondary-slideshow-controls">
+                                        <a href="#" class="previous-slide"><img src="<?php echo get_template_directory_uri(); ?>/img/Previous.png" alt="Previous" /></a>
+                                        <a href="#" class="pause-slide"><img src="<?php echo get_template_directory_uri(); ?>/img/pause.png" alt="Pause" /></a>
+                                        <a href="#" class="next-slide"><img src="<?php echo get_template_directory_uri(); ?>/img/Next.png" alt="Next" /></a>
+                                    </div>
                                 </div>
                             </div> 
                             <?php while ( have_rows('secondary_slide_show_images') ) : the_row(); $image = get_sub_field('image'); ?>                            
