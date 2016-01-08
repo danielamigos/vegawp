@@ -65,6 +65,10 @@ input:focus {
 	outline:0;
 	border:1px solid #04A4CC;
 }
+.post-edit-link
+{
+    color:#ffffff;
+}
 
 /*------------------------------------*\
     STRUCTURE
@@ -424,6 +428,35 @@ input:focus {
     right: 0;   
     margin:10px;
 }
+.secondary-slideshow-slide-title-wrapper{
+    position: absolute;
+	background-image: url('img/Opacity50.png');
+    top: 0;
+    padding-top:5px;
+    width:100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height:40px;    
+    color: #ffffff;
+    font-family: 'GothamMedium-Regular';
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.secondary-slideshow-slide-content-wrapper{
+    position: absolute;
+	background-image: url('img/Opacity50.png');
+    bottom: 0;
+    width:100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height:135px;
+    color: #ffffff;
+    font-family: 'GothamMedium-Regular';
+    font-size: 15px;
+    padding:20px;
+}
 
 .page-main-content 
 {
@@ -434,6 +467,26 @@ input:focus {
 	color: #ffffff;
 	padding:20px;
     font-size: 18px;
+    font-family: 'GothamHTF-Book';
+}
+
+.page-main-content li {
+    color: #43BEAA;
+} 
+.page-main-content li strong {
+    color: #43BEAA;
+    font-size: 25px;
+    font-family: 'GothamBlack-Regular';
+    
+} 
+.page-main-content h2 {
+    color: #43BEAA;
+    font-size: 25px;
+    font-family: 'GothamHTF-Bold';
+}
+.page-main-content b ,
+.page-main-content strong {
+    font-size: 21px;
 }
 
 /*------------------------------------*\
@@ -526,6 +579,19 @@ input:focus {
 		url('fonts/GothamHTF-Bold_gdi.otf') format('opentype'),
 		url('fonts/GothamHTF-Bold_gdi.svg#GothamHTF-Bold') format('svg');
 	font-weight: 700;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-2248;
+}
+@font-face {
+	font-family:'GothamBlack-Regular';
+	src: url('fonts/GothamBlack_gdi.eot');
+	src: url('fonts/GothamBlack_gdi.eot?#iefix') format('embedded-opentype'),
+		url('fonts/GothamBlack_gdi.woff') format('woff'),
+		url('fonts/GothamBlack_gdi.ttf') format('truetype'),
+		url('fonts/GothamBlack_gdi.otf') format('opentype'),
+		url('fonts/GothamBlack_gdi.svg#GothamBlack-Regular') format('svg');
+	font-weight: 900;
 	font-style: normal;
 	font-stretch: normal;
 	unicode-range: U+0020-2248;

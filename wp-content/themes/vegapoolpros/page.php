@@ -16,11 +16,7 @@
                     <div class="danielvalenzuela-slideshow" id="secondary-slideshow" data-auto-play="true" data-speed="10000">
                         <div class="danielvalenzuela-slideshow-wrapper">                            
                             <div class="secondary-slideshow-controls-wrapper">
-                                <div class="secondary-slideshow-title-wrapper">
-                                    <p class="secondary-slideshow-title">Title</p>    
-                                </div>
                                 <div class="secondary-slideshow-description-wrapper">
-                                    <p>Description</p>
                                     <div class="secondary-slideshow-controls">
                                         <a href="#" class="previous-slide"><img src="<?php echo get_template_directory_uri(); ?>/img/Previous.png" alt="Previous" /></a>
                                         <a href="#" class="pause-slide"><img src="<?php echo get_template_directory_uri(); ?>/img/pause.png" alt="Pause" /></a>
@@ -29,7 +25,11 @@
                                 </div>
                             </div> 
                             <?php while ( have_rows('secondary_slide_show_images') ) : the_row(); $image = get_sub_field('image'); ?>                            
-                                <div class="danielvalenzuela-slide"  >
+                                <div class="danielvalenzuela-slide">                                    
+                                    <div class="secondary-slideshow-slide-title-wrapper">
+                                        <p class="secondary-slideshow-slide-title"><?PHP the_sub_field('title'); ?></p>    
+                                    </div>
+                                    <div class="secondary-slideshow-slide-content-wrapper"><?PHP the_sub_field('content'); ?></div>
                                     <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
                                 </div>
                             <?php endwhile; ?>
@@ -68,7 +68,7 @@
 							<?php the_content(); ?>					
 							<?php //comments_template( '', true ); // Remove if you don't want comments ?>					
 							<br class="clear">					
-							<?php edit_post_link(); ?>					
+							<?php edit_post_link(); ?>				
 						</article><!-- /article -->					
 					<?php endwhile; ?>					
 					<?php else: ?>
