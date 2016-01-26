@@ -42,38 +42,46 @@
 				<?PHP if(is_front_page()): ?>
 					<div class="row">
 						<div class="col-sm-4 roundcorner-wrapper"  >
-							<div class="frontpage-logo">
-							<?php if ( get_theme_mod( 'vega_logo' )): ?>
-							<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr(get_bloginfo( 'name','display')); ?>' rel='home'>
-								<img src='<?php echo esc_url( get_theme_mod( 'vega_logo' ) ); ?>' alt='<?php echo esc_attr(get_bloginfo('name','display')); ?>'>
-							</a>
-							<?php endif; ?>
-							
-							<?PHP if (get_field('use_rollover_logo_image')): ?>
-								<?php $image = get_field('rollover_logo_image');
-								if( !empty($image) ): ?>					
-								<div class="logo-rollover">
-									<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"  />		
-									<?php if (get_field('logo_rollover_link') != ""): ?><a href="<?php the_field('logo_rollover_link'); ?>" target="<?PHP if (get_field('logo_rollover_link_target')=='Same Page') : echo '_self'; else: echo '_blank'; endif; ?>"><?php endif;?>
-									<h2 class="logo-rollover-text"><?PHP the_field('logo_rollover_text'); ?></h1>
-									<?php if (get_field('logo_rollover_link') != ""): ?></a><?php endif;?>
-								</div>										
-								<?php endif; ?>								
-							<?php endif; ?>	
-									
-								
-							
-							</div>
-						</div>
+                            
+                            <?PHP if (get_field('use_rollover_logo_image')): ?>
+                                <?php $image = get_field('rollover_logo_image');
+                                    if( !empty($image) ): ?>   
+                                        <?php if ( get_theme_mod( 'vega_logo' )): ?>
+                                        <div class="frontpage-logo" style="background-image:url('<?php echo esc_url( get_theme_mod( 'vega_logo' ) ); ?>');background-size:contain;">
+                                            <div class="logo-rollover">	            
+                                                <img class="page-logo" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />	
+                                                <?php if (get_field('logo_rollover_link') != ""): ?><a href="<?php the_field('logo_rollover_link'); ?>" target="<?PHP if (get_field('logo_rollover_link_target')=='Same Page') : echo '_self'; else: echo '_blank'; endif; ?>"><?php endif;?>
+                                                <h1 class="logo-rollover-text"><?PHP the_field('logo_rollover_text'); ?></h1>
+                                                <?php if (get_field('logo_rollover_link') != ""): ?></a><?php endif;?>                            
+                                            </div><!-- logo-rollover-->	  
+                                        </div><!-- frontpage-logo --> 
+                                        <?php endif; ?>			       
+                                    <?php endif; ?>								
+                                <?php else: ?>
+                                <div class="frontpage-logo">
+                                    <?php if ( get_theme_mod( 'vega_logo' )): ?>
+                                    <a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr(get_bloginfo( 'name','display')); ?>' rel='home'>
+                                        <img src='<?php echo esc_url( get_theme_mod( 'vega_logo' ) ); ?>' alt='<?php echo esc_attr(get_bloginfo('name','display')); ?>'>
+                                    </a>
+                                    <?php endif; ?>							
+                                </div><!-- frontpage-logo -->   		
+                                <?php endif; ?>	
+                                
+                                	
+						</div><!-- col-sm-4 roundcorner-wrapper -->
 						<div class="col-sm-8 roundcorner-wrapper">
 							<div class="frontpage-heading">								
 								<?PHP if (get_field('use_header_rollover_image')): ?>	
 									<?php $image = get_field('header_rollover_image'); if( !empty($image) ): ?>	
-									<img src="<?PHP echo $image['url']; ?>" alt="Header Image" style="opacity:0;"/>
-									<?PHP endif; ?>
+									<img src="<?PHP echo $image['url']; ?>" alt="Header Image" style="opacity:0;" class="hidden-lg hidden-md hidden-sm"/>
+                                    <h1 style="position:absolute;"><?PHP the_field('header_text'); ?></h1>	
+									<?PHP else: ?>
+								    <h1><?PHP the_field('header_text'); ?></h1>
+                                    <?PHP endif; ?>
+                                <?PHP else: ?>   
+                                <h1><?PHP the_field('header_text'); ?></h1>
 								<?PHP endif; ?>
 								
-								<h1><?PHP the_field('header_text'); ?></h1>	
 								
 								<?PHP if (get_field('use_header_rollover_image')): ?>
 									<?php if( !empty($image) ): ?>
@@ -82,14 +90,13 @@
 										<?php if (get_field('add_link_to_header_rollover_image')): ?></a><?PHP endif;?>
 									<?PHP endif; ?>
 								<?PHP endif; ?>
-							</div>
-						</div>
-					</div>
+							</div><!--frontpage-heading-->
+						</div><!-- col-sm-8 roundcorner-wrapper-->
+					</div><!-- row -->
 				<?PHP else: ?>					
 					<nav class="nav" role="navigation">
 						<?php vegapoolpros_main(); ?>
 					</nav>
 					<!-- /nav -->
 				<?PHP endif; ?>
-			</header>
-			<!-- /header -->
+			</header><!-- /header -->

@@ -3,6 +3,7 @@
 	$(function () {		
 		'use strict';
 		// DOM ready, take it away
+                
         var slideshows = $('.danielvalenzuela-slideshow');
 		$.each(slideshows, function(index,slideshow){
 			var $slideshow = $(slideshow);

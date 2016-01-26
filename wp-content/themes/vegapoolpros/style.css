@@ -226,9 +226,10 @@ input:focus {
 }
 
 .logo-rollover{
+    /*
 	position: absolute;
 	top: 0;
-	
+	*/
     filter: alpha(opacity=0);
     -moz-opacity: 0;
     -khtml-opacity: 0;
@@ -241,15 +242,21 @@ input:focus {
 	bottom: 0;
 	text-align: center;
 	font-family: 'GothamHTF-Book';
-	font-size: 60px;
+	font-size: 30px;
 	width:100%;
 	color: #ffffff; 
 	text-transform: uppercase;
 	margin-bottom:75px;
+    
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+	transition: all 0.5s ease 0s;
 }
-.logo-rollover:hover{
-	position: absolute;
-	top: 0;
+.logo-rollover:hover, .logo-rollover:hover .logo-rollover-text{
+	/*position: absolute;
+	top: 0;*/
     filter: alpha(opacity=1);
     -moz-opacity: 1;
     -khtml-opacity: 1;
@@ -265,20 +272,25 @@ input:focus {
 }
 
 .frontpage-heading h1{   
-	position: absolute;
 	top:0; 
-	margin-top: 17px;
     margin-left: 30px;
 	font-family: 'GothamHTF-Book';
-	font-size: 42px;
+	font-size: 28px;
 	color: #ffffff;
 	text-transform: uppercase;
+    
+	/*margin-top: 17px;
+	position: absolute;*/
+    margin-top:0;
+    position:relative;
+    margin-bottom:0;
 }
 .frontpage-heading-image
 {
 	border-radius: 10px;
 	position: absolute;
 	top: 0;
+	left: 0;
 	
     filter: alpha(opacity=0);
     -moz-opacity: 0;
@@ -489,6 +501,15 @@ input:focus {
     font-size: 21px;
 }
 
+
+.page-main-content input,
+.page-main-content textarea
+{
+    background-color: #A7A9AC;
+    border-color: #A7A9AC;
+    color: #ffffff;
+}
+
 /*------------------------------------*\
     IMAGES
 \*------------------------------------*/
@@ -603,11 +624,40 @@ input:focus {
 
 
 /* Custom, iPhone Retina */ 
+@media only screen and (min-width : 280px) {
+		
+	.frontpage-heading h1
+	{
+		font-size: 32px;
+	}
+}
 @media only screen and (min-width : 320px) {
 		
 	.frontpage-heading h1
 	{
 		font-size: 38px;
+	}
+    .logo-rollover-text
+    {
+        font-size: 40px;	
+    }
+}
+
+@media only screen and (min-width : 360px) {
+
+	
+	.frontpage-heading h1
+	{
+		font-size: 44px;
+	}
+}
+
+@media only screen and (min-width : 400px) {
+
+	
+	.frontpage-heading h1
+	{
+		font-size: 50px;
 	}
 }
 
@@ -616,8 +666,12 @@ input:focus {
 	
 	.frontpage-heading h1
 	{
-		font-size: 50px;
+		font-size: 56px;
 	}
+    .logo-rollover-text
+    {
+        font-size: 60px;	
+    }
 }
 
 /* Extra Small Devices, Phones */ 
@@ -630,12 +684,57 @@ input:focus {
 	}
 }
 /* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 540px) {
+
+	
+	.frontpage-heading h1
+	{
+		font-size: 68px;
+	}
+}
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 580px) {
+
+	
+	.frontpage-heading h1
+	{
+		font-size: 76px;
+	}
+}
+/* Extra Small Devices, Phones */ 
 @media only screen and (min-width : 620px) {
 
 	
 	.frontpage-heading h1
 	{
 		font-size: 82px;
+	}
+}
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 660px) {
+
+	
+	.frontpage-heading h1
+	{
+		font-size: 88px;
+	}
+}
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 700px) {
+
+	
+	.frontpage-heading h1
+	{
+		font-size: 94px;
+	}
+}
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 740px) {
+
+	
+	.frontpage-heading h1
+	{
+		font-size: 100px;
 	}
 }
 
@@ -655,10 +754,15 @@ input:focus {
 	{
 		height: 240px;
 	}
+    .logo-rollover-text
+    {
+        font-size: 30px;	
+    }
 	
 	.frontpage-heading h1
 	{
 		font-size: 62px;
+        padding-top: 17px;
 	}
 }
 
@@ -677,7 +781,11 @@ input:focus {
 	{
 		height: 314px;
 	}
-	
+    
+    .logo-rollover-text
+    {
+        font-size: 40px;	
+    }
 	.frontpage-heading h1
 	{
 		font-size: 82px;
@@ -701,6 +809,11 @@ input:focus {
 		height: 380px;
 	}
 	
+    .logo-rollover-text
+    {
+        font-size: 50px;	
+    }
+    
 	.frontpage-heading h1
 	{
 		font-size: 100px;
