@@ -166,22 +166,35 @@ input:focus {
 }
 .footer-logo
 {
+    display: inline-block;
+}
+
+.footer-logo img
+{
 	padding-top: 6px;
+	padding-bottom: 6px;
+}
+.footer-call-for-estimate-wrapper
+{
+    display: inline-block;
+    vertical-align: top;
 }
 
 .footer-call-for-estimate{
 	font-family: 'GothamHTF-MediumCondensed';
-	font-size: 38px;
+	font-size: 32px;
 	color: #D1D3D4;
 	text-transform: uppercase;
 	margin-bottom: 0;
+    margin-top: 5px;
+    margin-left: 10px;
 }
 
 .footer-menu{
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
-	margin-top:10px;
+	margin-top:15px;
 }
 .footer-menu li{
 	display: inline-block;
@@ -195,13 +208,26 @@ input:focus {
 	color: #D1D3D4;
 	text-transform: uppercase;
 }
+.footer-copyright {	
+    display: inline-block;
+    float:right;
+}
 .footer-copyright p{	
-	margin-top:10px;
+	margin-top:15px;
 	font-family: 'GothamHTF-Book';
 	font-size: 10px;
 	color: #D1D3D4;
 	text-transform: uppercase;
 	text-align: right;
+}
+
+.social-media-links-wrapper
+{
+    padding-top: 15px;
+}
+.social-media-links-wrapper a
+{
+    padding-right: 5px;
 }
 
 /*------------------------------------*\

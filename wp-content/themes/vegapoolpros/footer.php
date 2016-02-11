@@ -1,10 +1,21 @@
 			
 			<footer class="footer roundcorner-wrapper" role="contentinfo">
 				<div class="row footer-wrapper">
-					<div class="col-sm-2"><div class="footer-logo"><img src="<?php echo get_template_directory_uri(); ?>/img/footerlogo.png" alt="Footer logo"/></div></div>
-					<div class="col-sm-5"><p class="footer-call-for-estimate">Call for a free estimate 480-378-3436</p></div>
+					<div class="col-sm-6">
+                        <div class="footer-logo"><img src="<?php echo get_template_directory_uri(); ?>/img/footerlogo.png" alt="Footer logo"/></div>
+                        <div class="footer-call-for-estimate-wrapper"><p class="footer-call-for-estimate">Call for a free estimate 480-378-3436</p></div>
+					</div>
 					<div class="col-sm-3"><?PHP vegapoolpros_footer(); ?></div>
-					<div class="col-sm-2"><div class="footer-copyright"><?PHP the_field('footer_copyright_text','option'); ?></div></div>
+					<div class="col-sm-3">
+                        <div class="social-media-links-wrapper" style="display:inline-block">
+                            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/facebook.png" alt="Footer logo"/></a>
+                            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/instagram.png" alt="Footer logo"/></a>
+                            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/googleplus.png" alt="Footer logo"/></a>
+                            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/bbb.png" alt="Footer logo"/></a>
+                            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/thumbtack.png" alt="Footer logo"/></a>
+                        </div>
+                        <div class="footer-copyright"><?PHP the_field('footer_copyright_text','option'); ?></div>
+                    </div>
 				</div>
 			</footer><!-- /footer -->
 
