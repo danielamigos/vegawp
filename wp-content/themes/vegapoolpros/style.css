@@ -228,6 +228,13 @@ input:focus {
 .social-media-links-wrapper a
 {
     padding-right: 5px;
+    transition: all 0.4s ease 0s;
+    opacity: .5;
+}
+
+.social-media-links-wrapper a:hover
+{
+    opacity: 1;
 }
 
 /*------------------------------------*\

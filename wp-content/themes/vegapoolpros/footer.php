@@ -7,13 +7,17 @@
 					</div>
 					<div class="col-sm-3"><?PHP vegapoolpros_footer(); ?></div>
 					<div class="col-sm-3">
-                        <div class="social-media-links-wrapper" style="display:inline-block">
-                            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/facebook.png" alt="Footer logo"/></a>
-                            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/instagram.png" alt="Footer logo"/></a>
-                            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/googleplus.png" alt="Footer logo"/></a>
-                            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/bbb.png" alt="Footer logo"/></a>
-                            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/thumbtack.png" alt="Footer logo"/></a>
-                        </div>
+                        <?php if( have_rows('footer_social_media_icons','option') ): ?>
+                        
+                            <div class="social-media-links-wrapper" style="display:inline-block">
+                                                    
+                            <?php while( have_rows('footer_social_media_icons','option') ): the_row();  ?>
+                                <a href="<?php the_sub_field('url');?>"><img src="<?php echo get_template_directory_uri(); ?>/img/<?php the_sub_field('social_media'); ?>.png" alt="<?php the_sub_field('social_media'); ?>"/></a>
+                            <?php endwhile; ?>
+                            
+                            </div>
+                            
+                        <?php endif; ?>
                         <div class="footer-copyright"><?PHP the_field('footer_copyright_text','option'); ?></div>
                     </div>
 				</div>

@@ -531,6 +531,39 @@ function vega_theme_customizer( $wp_customize ) {
 add_action('customize_register', 'vega_theme_customizer');
 
 
+
+// 1. customize ACF path
+add_filter('acf/settings/path', 'my_acf_settings_path');
+function my_acf_settings_path( $path ) {
+    // update path
+    $path = get_stylesheet_directory() . '/acf/';
+    // return
+    return $path;   
+}
+// 2. customize ACF dir
+add_filter('acf/settings/dir', 'my_acf_settings_dir');
+function my_acf_settings_dir( $dir ) {
+    // update path
+    $dir = get_stylesheet_directory_uri() . '/acf/';
+    // return
+    return $dir;   
+}
+// 3. Hide ACF field group menu item
+add_filter('acf/settings/show_admin', '__return_false');
+// 4. Include ACF
+include_once( get_stylesheet_directory() . '/acf/acf.php' );
+
+//5. Remove the plugin update notificaction     
+function stop_acf_update_notifications( $value ) {
+    $path = get_stylesheet_directory() . '/acf/acf.php';
+    $path = str_replace ('\\','/', $path); //fixes window directory issue
+    unset( $value->response[$path] );
+	return $value;
+}
+add_filter( 'site_transient_update_plugins', 'stop_acf_update_notifications', 11 );
+
+
+
 if( function_exists('acf_add_options_page') ) {
 	
 	acf_add_options_page(array(
