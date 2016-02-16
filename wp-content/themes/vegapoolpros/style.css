@@ -543,6 +543,24 @@ input:focus {
     color: #ffffff;
 }
 
+
+/*------------------------------------*\
+    REVIEW PAGE
+\*------------------------------------*/
+.review-links-wrapper
+{
+    margin-top: 60px;
+}
+
+.review-link
+{
+    text-align: center;
+}
+.review-link a
+{
+    color: #ffffff;
+}
+
 /*------------------------------------*\
     IMAGES
 \*------------------------------------*/
